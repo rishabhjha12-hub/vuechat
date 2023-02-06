@@ -1,13 +1,46 @@
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  .message {
+    padding: 12px 20px;
+    margin: 8px 0;
+    width:70vw;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+  }
+  .Input{
+     width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  .InputMessage{
+    width:100%;
+    height:100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+</style>
 <template>
   <div>
-  <div><input v-model="username" placeholder="Enter username"/></div>
     <h1>Chat App</h1>
+    <div><input v-model="username" placeholder="Enter username" class="Input"/></div>
     <div v-for="message in messages">
-      {{ !message.username?"anonyms":message.username }}: {{ message.text }}
+      <div class="message">
+        {{ !message.username?"anonyms":message.username }}: {{ message.text }}
+      </div>
     </div>
     <div>
-      
-      <input v-model="text" placeholder="Enter message" @keyup.enter="sendMessage" />
+      <input v-model="text" placeholder="Enter message" class="InputMessage" @keyup.enter="sendMessage" />
     </div>
   </div>
 </template>
